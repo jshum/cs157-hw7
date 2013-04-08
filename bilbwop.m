@@ -28,11 +28,12 @@ for i=dt/2:dt:20,
     fric=-min(v(2,:),0).*contact; v(2,contact)=max(0,v(2,contact));
     v(1,:)=sign(v(1,:)).*max(0,abs(v(1,:))-fric*friction);
     p=p+v*dt;
-    if nargin==2, %drawing code
+    if nargin==2, %drawing code        
         figure(100);plot(p(1,[6 1 2 3 2 1 4 5]),p(2,[6 1 2 3 2 1 4 5]),'k',[-2,100],[0,0],'r',p(1,6),p(2,6),'ko','MarkerSize',10,'MarkerFaceColor','k');
         axis equal;axis([max(4,p(1,1))+[-6 3] -1 6]);
-    end;
-    if any(contact([1 6])), break; end %hip or head hit the ground, so stop
+    end;   
+    if any(contact([1 6])), break; end %hip or head hit the ground, so stop    
+    % if p(2,6) < 1, break; end %jshum
 end
 rating=-p(1,1); %return (negative) x coordinate of hip
 %v is the velocity of each part of Bilbo; the first entry is the hip, 6th

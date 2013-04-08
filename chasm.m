@@ -14,7 +14,7 @@ function br=chasm(x,draw)
 % If you are curious, bridge physics works as follows: the strain induced
 % on a bridge segment i of thickness x(i) by having to hold up a second 
 % bridge segment j with mass x(j) that is distance (j-i) to the right is
-% x(j)*(j-i)/x(i). These expressions are summed for all segments to the
+% x(j)hl*(j-i)/x(i). These expressions are summed for all segments to the
 % right of i, and if the strain is greater than 300, the bridge breaks at i.
 
 if numel(x)~=100, error('Input must have 100 elements'); end
