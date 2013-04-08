@@ -1,4 +1,5 @@
 % Empty file! Put whatever you want here
+
 % naive choice : 42
 % chasm([20:-19.8/99:0.2],0)
 % 
@@ -21,10 +22,17 @@
 % % 27
 % f = @(x) 20./x;
 % chasm(f(1:100),0)
+%
+% We tried a couple of functions, including linear, quadratic and the
+% inverse function. Out of these, the linear line actually strangely
+% preformed the best.
 
-% 1 second time Delta
-
-x = bridgeSearch(@chasm, @bridgeProposal, 0.2*ones(1,100), 0, 0.2, 20, 1, 0.01);
+% This function utilizes a modification of the localSearch function
+% we wrote. More information can be found in bridgeSearch.m
+% The intial guess is [0.2 0.2 ...0.2] because that is the minimum
+% thickness of the bridge and our optimization works by thickening segments
+% that fail. Therefore, we want to start at the minimal thickness.
+x = bridgeSearch(@chasm, @bridgeProposal, 0.2*ones(1,100), 0, 0.2, 20, 2, 0.01)
 
 
 

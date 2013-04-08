@@ -33,7 +33,7 @@ for i=dt/2:dt:20,
         axis equal;axis([max(4,p(1,1))+[-6 3] -1 6]);
     end;   
     if any(contact([1 6])), break; end %hip or head hit the ground, so stop    
-    % if p(2,6) < 1, break; end %jshum
+    strcat(num2str(i),' ',num2str(p(2,1)))    
 end
 rating=-p(1,1); %return (negative) x coordinate of hip
 %v is the velocity of each part of Bilbo; the first entry is the hip, 6th
