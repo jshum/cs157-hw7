@@ -18,6 +18,15 @@ clc
 %%
 
 inputimg = double(imread('lenaNoise.jpg'));
-
 fixedimg = denoiseQuadratic(inputimg, 2);
 
+colormap gray
+% h = imshow(fixedimg);
+% 
+imagesc(inputimg);
+% 
+% 
+figure
+
+colormap gray
+imagesc(fixedimg);
