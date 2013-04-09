@@ -1,5 +1,8 @@
 % Empty file! Put whatever you want here
 
+% NB run the function using 'localSearchCircle' not localSearch!!
+
+
 % Our method of reducing the number of circles was to first give as input a
 % random vector for a position. And we first allow an lower bound of (0,0) in
 % the search space and an upper bound of (100,100) in the search space for
